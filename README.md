@@ -13,3 +13,10 @@ So or so you will have to run this container with all required variables set. Th
 
 You get the error, that a public.pem or private.pem file is missing, enter the container and run the `bin/console system:generate-jwt-secret` command. It will generate the required certificates for you.
 
+## Update Shopware
+
+In order to update shopware, you just have to update the Shopware version URL in the `Dockerfile` and set the version inside the `VERSION` file to the Shopware version.
+
+After this you can build the container by running `make` to test it.
+
+If the container works like you expect it to be, publish it with `make push`. This will create a new tag with the version given in the `VERSION` file and updates the latest tag to the just created version. After that, both tags will be pushed to the dockerhub 

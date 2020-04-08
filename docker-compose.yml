@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   app_server:
-    image: shopware-development:6.1.4
+    image: docker-registry.test.etribes.de:5000/shopware-6:latest
     env_file:
       - example.env
     links:
@@ -16,5 +16,3 @@ services:
       MYSQL_PASSWORD: app
 
 # vim: set shiftwidth=2 tabstop=2 expandtab:
-
-
