@@ -16,6 +16,8 @@ RUN apk --no-cache add \
         php7-zip php7-zlib php7-phar git \
         gnu-libiconv
 
+RUN apk --no-cache add npm bash
+
 RUN adduser -u 1000 -D -h /sw6 sw6 sw6
 RUN rm /etc/nginx/conf.d/default.conf
 
@@ -43,4 +45,3 @@ EXPOSE 8000
 ENTRYPOINT [ "/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf" ]
 
 HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8000/fpm-ping
-
