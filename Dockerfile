@@ -4,7 +4,6 @@ ENV COMPOSER_HOME=/var/cache/composer
 ENV PROJECT_ROOT=/sw6
 ENV ARTIFACTS_DIR=/artifacts
 ENV LD_PRELOAD=/usr/lib/preloadable_libiconv.so
-ENV SHOPWARE_URL=https://www.shopware.com/de/Download/redirect/version/sw6/file/install_6.1.5_1585830011.zip
 
 RUN apk --no-cache add \
         nginx supervisor curl zip unzip rsync \
@@ -24,6 +23,8 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY config/etc /etc
 
 WORKDIR /sw6
+
+ENV SHOPWARE_URL=https://www.shopware.com/de/Download/redirect/version/sw6/file/install_6.1.6_1589441426.zip
 
 RUN mkdir -p /cache
 RUN wget $SHOPWARE_URL -O /cache/install.zip
