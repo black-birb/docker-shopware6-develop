@@ -10,7 +10,7 @@ RUN apk --no-cache add \
         php7 php7-fpm \
         php7-ctype php7-curl php7-dom php7-fileinfo php7-gd \
         php7-iconv php7-intl php7-json php7-mbstring \
-        php7-mysqli php7-openssl php7-pdo_mysql \
+        php7-mysqli php7-openssl php7-pdo_mysql php7-sodium \
         php7-session php7-simplexml php7-tokenizer php7-xml php7-xmlreader php7-xmlwriter \
         php7-zip php7-zlib php7-phar git php7-soap php7-redis\
         gnu-libiconv php7-opcache php7-pecl-apcu
@@ -24,7 +24,7 @@ COPY config/etc /etc
 
 WORKDIR /sw6
 
-ENV SHOPWARE_URL=https://www.shopware.com/en/Download/redirect/version/sw6/file/install_v6.3.0.2_b5788541058257e6114b7405a41a36946132af9c.zip
+ENV SHOPWARE_URL=https://www.shopware.com/en/Download/redirect/version/sw6/file/install_v6.3.2.0_979aa4e7fd33d75e33ce1dc58b65616b18b702d2.zip
 ENV APP_URL=http://localhost
 
 RUN mkdir -p /cache &&\
