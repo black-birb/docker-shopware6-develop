@@ -24,7 +24,7 @@ COPY config/etc /etc
 
 WORKDIR /sw6
 
-ENV SHOPWARE_URL=https://www.shopware.com/en/Download/redirect/version/sw6/file/install_v6.3.2.0_979aa4e7fd33d75e33ce1dc58b65616b18b702d2.zip
+ENV SHOPWARE_URL=https://www.shopware.com/en/Download/redirect/version/sw6/file/install_v6.3.2.1_c1b0e416b31c75b1540bcdf1dd0a548918d418f7.zip
 ENV APP_URL=http://localhost
 
 RUN mkdir -p /cache &&\
