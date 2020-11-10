@@ -33,7 +33,7 @@ ENV APP_URL=http://localhost.local
 RUN mkdir -p /cache &&\
     mkdir -p /var/cache/composer/cache/files/
 RUN git clone $SHOPWARE_URL /sw6
-RUN cd /sw6 && composer require shopware/platform v6.3.2.1
+RUN cd /sw6 && composer require shopware/platform v6.3.3.1
 RUN touch /sw6/install.lock && touch /sw6/.env
 RUN chown -R sw6.sw6 /run \
     /var/lib/nginx \
