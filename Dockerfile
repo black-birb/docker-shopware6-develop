@@ -8,7 +8,7 @@ ENV COMPOSER_MEMORY_LIMIT=-1
 
 RUN apk --no-cache add \
         nginx supervisor curl zip unzip rsync git\
-        busybox-initscripts busybox-suid \
+        busybox-initscripts busybox-suid mysql-client\
         php7 php7-fpm \
         php7-ctype php7-curl php7-dom php7-fileinfo php7-gd \
         php7-iconv php7-intl php7-json php7-mbstring \
