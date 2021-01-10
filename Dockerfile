@@ -7,7 +7,7 @@ ENV LD_PRELOAD=/usr/lib/preloadable_libiconv.so
 ENV COMPOSER_MEMORY_LIMIT=-1
 
 RUN apk --no-cache add \
-        nginx supervisor curl zip unzip rsync git\
+        nginx supervisor curl zip unzip rsync git composer\
         busybox-initscripts busybox-suid mysql-client\
         php7 php7-fpm \
         php7-ctype php7-curl php7-dom php7-fileinfo php7-gd \
@@ -15,7 +15,7 @@ RUN apk --no-cache add \
         php7-mysqli php7-openssl php7-pdo_mysql php7-sodium \
         php7-session php7-simplexml php7-tokenizer php7-xml php7-xmlreader php7-xmlwriter \
         php7-zip php7-zlib php7-phar php7-soap php7-redis \
-        gnu-libiconv php7-opcache php7-pecl-apcu composer
+        gnu-libiconv php7-opcache php7-pecl-apcu
 
 RUN apk --no-cache add npm bash
 
@@ -33,7 +33,7 @@ ENV APP_URL=http://localhost.local
 RUN mkdir -p /cache &&\
     mkdir -p /var/cache/composer/cache/files/
 RUN git clone $SHOPWARE_URL /sw6
-RUN cd /sw6 && composer require shopware/platform v6.3.3.1
+RUN cd /sw6 && composer require shopware/platform v6.3.4.1
 RUN touch /sw6/install.lock && touch /sw6/.env
 RUN chown -R sw6.sw6 /run \
     /var/lib/nginx \
